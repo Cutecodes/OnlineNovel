@@ -1,6 +1,7 @@
-#依赖安装：pip install -r requirements.txt
-#切换到project文件夹：cd project
-#python run.py
+# 数据库应用作业，使用mssql和python flask实现简单的小说网站
+## 依赖安装：pip install -r requirements.txt
+## 切换到project文件夹：cd project
+## python run.py
 ## 路由表
 
 Map([<Rule '/reader/readercenter' (POST, OPTIONS, HEAD, GET) -> reader.readercenter>,
