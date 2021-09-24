@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Admin</title>   
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin.css',_external=True) }}"/> 
+    <script type="text/javascript">
+        function runCode() {
+        
+        var content = document.getElementById('theCode').value;
+        var httpRequest = new XMLHttpRequest();//第一步：建立所需的对象
+        httpRequest.open('POST', '/admin/model', true);//第二步：打开连接  将请求参数写在url中  ps:"./Ptest.php?name=test&nameone=testone"
+        httpRequest.send(content);//第三步：发送请求  将请求参数写在URL中
+/**
+ * 获取数据后的处理程序
+ */
+        httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+            var json = httpRequest.responseText;//获取到json字符串，还需解析
+            var result = document.getElementById('theResult');
+            result.value = json;
+        }
+        };
+        
+    }
+    </script>
+</head>  
+<body>  
+    <div id="admin">    
+        <h1>Admin</h1>  
+        <textarea id="theCode" >请输入要运行的SQL代码
+        </textarea><br />
+        <input onclick="runCode()" value="运行代码" type="button"> 
+        <textarea id="theResult">
+        </textarea><br />
+    </div>  
+</body>  
+</html> 

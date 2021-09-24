@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>满分小说网</title>
+    <meta name="keywords" content="满分小说网">
+    <meta name="description" content="满分小说网是厦大学生的数据库大作业，请勿商用">
+    <link rel="shortcut icon" type="image/png" href="/fen.png" />
+    <!--<meta name="author" content="www.rightstar.cn"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="mobile-agent" content="format=html5; url=http://m.rightstar.cn/">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <link rel="canonical" href="https://www.rightstar.cn" />
+    <!-- 引入favicon图标 -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fen.png',_external=True) }}" />
+    <!-- 引入base的css样式 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css',_external=True) }}" th:href="@{/statics/css/common.css}">
+    <link rel="stylesheet" th:href="@{~/statics/css/base.css}" href="{{ url_for('static', filename='css/base.css',_external=True) }}">
+    <!-- 引入register的css样式 -->
+    <link rel="stylesheet" th:href="@{~/statics/css/register.css}" href="{{ url_for('static', filename='css/register.css',_external=True) }}">
+    <script type="text/javascript">
+    function formSubmit()
+    {
+        document.getElementById("form").submit()
+    }
+    </script>
+</head>
+
+<body>
+    <div class="w">
+        <header>
+            <div class="logo">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='images/man.png',_external=True) }}" alt="">
+                </a>
+            </div>
+        </header>
+
+        <div class="registerarea">
+            <h3>
+                注册新用户
+                <div class="login">已有账户，去<a href="/author/login">登录</a></div>
+            </h3>
+            <div class="reg_form">
+                <form action="/author/register" id="form" method="post">
+                    <ul>
+                        <!-- 账号 -->
+                        <li>
+                            <label for="">账号：</label>
+                            <input type="text" class="inp" id="authorName" name="authorName">
+                            <span class="success">
+                                字母开头,可包含字母和数字
+                            <i class=""></i>
+                            </span>
+                        </li>
+
+                        
+
+                        <!-- 密码 -->
+                        <li> <label for="">密码：</label>
+                            <input type="password" class="inp" id="pwd" name="authorPassword">
+                            <span class="success">
+                                请输入6-16位密码
+                                <i class=""></i>
+                            </span>
+                        </li>
+
+                        <!-- 确认密码 -->
+                        <li> <label for="">确认密码：</label>
+                            <input type="password" class="inp" id="repwd" name="repassword">
+                            <span class="success">
+                                <i class=""></i>
+                            </span>
+                        </li>
+
+                        
+
+                        <div id="submit" class="btn" onclick="formSubmit()">完成注册</div>
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+</html>

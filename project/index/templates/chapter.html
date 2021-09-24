@@ -1,0 +1,119 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>满分小说网</title>
+    <meta name="keywords" content="满分小说网">
+    <meta name="description" content="满分小说网是厦大学生的数据库大作业，请勿商用">
+    <link rel="shortcut icon" type="image/png" href="/fen.png" />
+    <!--<meta name="author" content="www.rightstar.cn"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="mobile-agent" content="format=html5; url=http://m.rightstar.cn/">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <link rel="canonical" href="https://www.rightstar.cn" />
+    <!-- 引入css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bookView.css',_external=True) }}" th:href="@{~/statics/css/bookView.css}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css',_external=True) }}" th:href="@{~/statics/css/commom.css}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bookDetail.css',_external=True) }}" th:href="@{~/statics/css/bookDetail.css}">
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?o0ahg8');
+            src: url('fonts/icomoon.eot?o0ahg8#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?o0ahg8') format('truetype'), url('fonts/icomoon.woff?o0ahg8') format('woff'), url('fonts/icomoon.svg?o0ahg8#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+    </style>
+    <script>
+        function addFontSize() {
+            var content = document.getElementsByClassName("content")[0];
+            var size = parseInt(content.style.fontSize.replace("px", "")) || 15
+
+            size += 1
+            content.style.fontSize = size
+            return size;
+        }
+
+        function deleteFontSize() {
+            var content = document.getElementsByClassName("content")[0];
+            var size = parseInt(content.style.fontSize.replace("px", "")) || 15
+
+            size -= 1
+            content.style.fontSize = size
+            return size;
+        }
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <!-- 主体模块 -->
+    <!-- bookShelf引入 -->
+    <!-- 第一模块 -->
+    <div class="w main">
+        <!-- 第一模块 -->
+        <div class="main_1_t">
+            
+                
+        </div>
+
+        <div class="main_1_m">
+            <div class="main_1_m_content">
+                <div class="main_1_m_content_title" >{{chapter[2]}}</div>
+                <div class="bookinfo">
+                    
+                </div>
+                <div class="read_line"></div>
+                <div class="content" >
+                    {% if chaptercontent== None %}
+                        <a href="/{{chapter[0]}}/{{chapter[1]}}/subscribe">购买此章节</a>
+                    {% else %}
+                        {{chaptercontent|safe}}
+                    {% endif %}  
+                </div>
+                <div class="btnbox">
+                    
+                    {% if lastchapter!=() %}
+                    <a href="/{{lastchapter[0]}}/{{lastchapter[1]}}">上一章</a>
+                    {% else %}
+                    <a href="/{{chapter[0]}}">上一章</a>
+                    {% endif %}
+                    <a href="/{{chapter[0]}}">目录</a>
+                    {% if nextchapter!=() %}
+                    <a href="/{{nextchapter[0]}}/{{nextchapter[1]}}">下一章</a>
+                    {% else %}
+                    <a href="/{{chapter[0]}}">下一章</a>
+                    {% endif %}
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="tab_l">
+                
+            </div>
+            <div class="tab_r">
+
+                <a onclick="addFontSize()">放大</a>
+                <a>自动</a>
+                <a onclick="deleteFontSize()">缩小</a>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,157 @@
+.main {
+    background-color: #fff;
+}
+
+.main_m {
+    margin-top: 20px;
+}
+
+.main_m_content {
+    background-color: #f7f7f7;
+    border: 1px solid #e6e6e6;
+    padding: 12px 20px;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.main_m_content_t {
+    color: #999;
+    padding-bottom: 2px;
+    overflow: hidden;
+}
+
+.main_m_content_t span:nth-child(1) {
+    float: left;
+    font-size: 15px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.main_m_content_t span:nth-child(2) {
+    float: right;
+    font-size: 15px;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+.rank {
+    padding: 3px 0;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.rank_div1 {
+    color: #999;
+    float: left;
+    width: 88px;
+    padding-top: 5px;
+}
+
+.rank_div2 {
+    float: left;
+    width: 1020px;
+    color: #888;
+}
+
+.rank_div2 a {
+    color: #151515;
+    margin: 5px 6px 6px 7px;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.rank_div2 .active {
+    color: #fff;
+    background-color: #d32f2f;
+    border-radius: 2px;
+    padding: 0 5px;
+    font-size: 13px;
+}
+
+.main_l_t {
+    width: 1180px;
+    line-height: 20px;
+    padding: 10px 0 10px 20px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.main_l_t_r {
+    float: right;
+    color: #111;
+}
+
+.main_l_t_r a {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+}
+
+.main_l_t_r a:nth-child(1) {
+    background-position: left bottom;
+    background: url(http://www.hybooks.cn/site/images/listtype.png);
+}
+
+.main_l_m {
+    border: 1px solid #e6e6e6;
+    padding: 0 20px 20px;
+    overflow: hidden;
+}
+
+
+/*分页样式*/
+
+.h20-blank {
+    height: 20px;
+}
+
+.pagebox {
+    line-height: 33px;
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+}
+
+.pagebox li,
+ol,
+ul {
+    list-style: none;
+}
+
+.hy-page-wrapper ul li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.page #currentPage {
+    background: #d32f2f;
+    color: #fff;
+    border: 1px solid #d32f2f;
+}
+
+.hy-page-wrapper ul li a {
+    display: inline-block;
+    width: auto;
+    padding: 0 10px;
+    margin: 0 1px;
+}
+
+.pagebox a {
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    width: 33px;
+    height: 33px;
+    display: inline-block;
+    margin: 0 3px;
+    font-size: 14px;
+    color: #999;
+    vertical-align: middle;
+}
+
+.pagebox a,
+a:active,
+a:hover,
+a:link {
+    text-decoration: none;
+}

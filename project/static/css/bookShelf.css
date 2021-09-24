@@ -1,0 +1,170 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.main_1 {
+    height: 40px;
+    line-height: 40px;
+}
+
+.main_1 img {
+    width: 20px;
+    height: 17px;
+    vertical-align: middle;
+}
+
+.main_1 span {
+    color: #626267;
+}
+
+.main_r {
+    width: 870px;
+    height: auto;
+    margin-left: 10px;
+    background-color: #fff;
+}
+
+.main_r_t {
+    width: 810px;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px;
+    padding: 0 20px;
+    background-color: #f3f3f3;
+}
+
+.main_r_t_t>span:nth-child(1) {
+    color: #f55;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.main_r_t_t>span:nth-child(2) {
+    color: #929297;
+    font-size: 12px;
+}
+
+.main_r_t_t>span:nth-child(2) span {
+    color: #f55;
+}
+
+.main_r_t_r {
+    position: relative;
+}
+
+.main_r_t_r>span:nth-child(1) {
+    color: #929297;
+}
+
+.main_r_t_r_s {
+    background-color: #fff;
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+}
+
+.main_r_t_r_1 {
+    line-height: 30px;
+    text-align: center;
+    color: #f55;
+    margin: 0 5px 0 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.main_r_t_r_2 {
+    width: 0;
+    height: 0;
+    float: right;
+    margin-top: 15px;
+    margin-right: 8px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: red transparent transparent;
+}
+
+.main_r_t_t_r {
+    display: none;
+    width: 66px;
+    height: 180px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+}
+
+.main_r_t_t_r span {
+    width: 100%;
+    height: 30px;
+    display: block;
+    text-align: center;
+}
+
+.u-user-info {
+    margin-top: 4px;
+}
+
+.u-info-detail {
+    margin-left: 175px;
+    margin-top: 60px;
+}
+
+.u-info-detail li {
+    display: block;
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+.u-info-detail li>span {
+    color: #333;
+    font-size: 15px;
+    margin-right: 33px;
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+}
+
+.u-info-detail li div {
+    display: inline-block;
+}
+
+.u-info-tips {
+    color: #b3b3b3;
+    margin-left: 33px;
+}
+
+.u-info-detail input.u-info-btn {
+    margin: 50px 0 0 130px;
+    font-family: "Microsoft Yahei";
+}
+
+.u-info-btn {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    background: #FF5555;
+    border-radius: 4px;
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+    margin-bottom: 70px;
+    border: none;
+    cursor: pointer;
+    width: 178px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e5e5e5;
+}
+
+input {
+   
+    font: initial;
+}
+
+.u-info-detail li div input {
+    width: 282px;
+    height: 32px;
+    border: 1px solid #f0f0f0;
+    font-size: 12px;
+    color: #888;
+    padding-left: 10px;
+}

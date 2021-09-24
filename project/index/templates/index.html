@@ -1,0 +1,170 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>满分小说网</title>
+    <meta name="keywords" content="满分小说网">
+    <meta name="description" content="满分小说网是厦大学生的数据库大作业，请勿商用">
+    <link rel="shortcut icon" type="image/png" href="/fen.png" />
+    <!--<meta name="author" content="www.rightstar.cn"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="applicable-device" content="pc">
+    <meta http-equiv="mobile-agent" content="format=html5; url=http://m.rightstar.cn/">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <link rel="canonical" href="https://www.rightstar.cn" />
+    <!-- 引入公共样式css -->
+    <!-- 引入index.css样式 -->
+    <!-- 引入css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css',_external=True) }}" th:href="@{/statics/css/common.css}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css',_external=True) }}" th:href="@{/statics/css/index.css}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css',_external=True) }}" th:href="@{/statics/css/search.css}">
+
+
+    <script src="{{ url_for('static', filename='js/common.js',_external=True) }}"></script>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.js"></script>
+    <script>
+        $("img").lazyload({
+            effect: "fadeIn"
+        });
+    </script>
+
+
+       
+  
+</head>
+
+<body>
+    <!-- 导航模块 -->
+    <section class="shortcut">
+        <div class="w">
+            <div class="fl">
+                <ul>
+                    <li>欢迎访问满分小说网</li>
+                </ul>
+            </div>
+            <div class="fr">
+                <ul>
+                    <li>
+                        <img src="{{ url_for('static', filename='images/home.png',_external=True) }}" alt="">
+                        <a href="#" onclick="toDesktop('http:\//www.rightstar.cn/','满分小说')"> 设为首页</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- 头部模块 -->
+    <header>
+       
+        <div class="w">
+            <div class=" fl logo"><img src="{{ url_for('static', filename='images/man.png',_external=True) }}" alt=""></div>
+            <div class="search">
+                <form action="/search">
+                    <input type="text" placeholder="输入搜索的书名" class="search_input" name="searchContent">
+                    <button type="submit" class="search_btn"><img src="{{ url_for('static', filename='images/search.png',_external=True) }}" alt=""></button>
+                   
+                </form>
+            </div>
+
+            <div class="fr header_right">
+                <ul>
+                    <li>
+                        <img src="{{ url_for('static', filename='images/person_icon.png',_external=True) }}">
+                        <span class="span_1" >
+                            {% if logined==false%}
+                            <a href="/reader/login" class="span_1">登录</a>|
+                            <a href="/reader/register" class="span_1">注册</a>
+                            {% else %}
+                            {% endif %}
+                         </span>
+                        <span class="span_1" >
+                            <a href="/reader/readercenter" class="span_1">个人中心</a> 
+                         </span>
+                    </li>
+                    <li>
+                        <img src="{{ url_for('static', filename='images/book_icon.png',_external=True) }}" alt="">
+                        <a href="/reader/bookshelf">我的书架</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+
+    </header>
+<body>
+    <!-- hotword模块 -->
+    <nav class="nav_1">
+        <div class="w">
+
+            <a href="/">首页</a>
+            <a href="/author/authorcenter">作品提交</a>
+
+        </div>
+
+    </nav>
+    <!-- 主体模块 -->
+    <div class=" w main">
+        
+
+     
+        <!-- 第三模块 -->
+        <div class=" w main_3">
+            <!-- 3-1左模块 -->
+            <div class="fl main_3_l">
+                <div class="fl main_3_l_a" >
+                    
+                    {% for key in novels.keys()%}
+                    <div class="main_3_l_t">
+                        <span></span>
+                        <a href="#" >
+                            <strong >{{key}}</strong>
+                        </a>
+                    </div>
+                    
+                        {% for novel in novels[key]%}
+                        <div >
+                            <div >
+                                <a href="/{{novel[0]}}" th:href="|./book/detail/|+${book.getId()}" th:text="${book.getName()}">{{novel[1]}}    作者：{{novel[2]}}</a>
+                            </div>
+                            
+                            
+                        </div>
+                        {% endfor %}
+                    
+                    
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            
+        </div>
+
+    
+   
+     
+     
+    <!-- 最底部模块 -->
+    <footer th:fragment="footer">
+        <div class="footer_1"></div>
+        <div class="footer_2"><a href="#">联系我们</a>
+            <a href="#">申请收录</a>
+            <a href="#">蜘蛛协议</a>
+            <a href="#">隐私条款</a>
+            <a href="#">免责声明</a>
+            <a href="#">关于我们</a></div>
+        <div class="footer_3">Copyright © 2019 - 2020 . All Rights Reserved . 版权所有满分小说网</div>
+        <div class="footer_4">本站内容系满分小说网根据您的指令搜索各大小说站得到的链接列表，不代表满分小说网赞成被搜索网站的内容或立场</div>
+        <div class="footer_5">如果版权人认为在本站放置您的作品有损您的利益，请发邮件至"10000@qq.com",本站确认后立即删除</div>
+        <div class="footer_6">Processed in 0.081(s), Memory: 1.402MB, Sqls: 54, cacheread: 776, cachewrite: 55, net:0.
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
